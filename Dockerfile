@@ -8,7 +8,7 @@ FROM ubuntu:16.04
 MAINTAINER Sucipto <chip@pringstudio.com>
 
 ENV VERSION_SDK_TOOLS "25.2.2"
-ENV VERSION_BUILD_TOOLS "24.0.3"
+ENV VERSION_BUILD_TOOLS "25.0.2"
 ENV VERSION_TARGET_SDK "25"
 
 ENV SDK_PACKAGES "build-tools-${VERSION_BUILD_TOOLS},android-${VERSION_TARGET_SDK},addon-google_apis-google-${VERSION_TARGET_SDK},platform-tools,extra-android-m2repository,extra-android-support,extra-google-google_play_services,extra-google-m2repository,sys-img-armeabi-v7a-${VERSION_TARGET_SDK},sys-img-armeabi-v7a-google_apis-${VERSION_TARGET_SDK}"
@@ -59,5 +59,7 @@ RUN mkdir /sdk/tools/keymaps && \
 RUN mkdir /helpers
 
 COPY wait-for-avd-boot.sh /helpers
+
+RUN  chmod +x  /helpers/wait-for-avd-boot.sh
 
 RUN (while [ 1 ]; do sleep 5; echo y; done) | ${ANDROID_HOME}/tools/android update sdk -u -a -t ${SDK_PACKAGES}
