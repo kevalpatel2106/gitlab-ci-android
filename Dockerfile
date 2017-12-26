@@ -8,8 +8,8 @@ FROM ubuntu:16.04
 MAINTAINER Sucipto <chip@pringstudio.com>
 
 ENV VERSION_SDK_TOOLS "25.0.5"
-ENV VERSION_BUILD_TOOLS "25.0.3"
-ENV VERSION_TARGET_SDK "25"
+ENV VERSION_BUILD_TOOLS "26.0.2"
+ENV VERSION_TARGET_SDK "26"
 
 ENV SDK_PACKAGES "build-tools-${VERSION_BUILD_TOOLS},android-${VERSION_TARGET_SDK},addon-google_apis-google-${VERSION_TARGET_SDK},platform-tools,extra-android-m2repository,extra-android-support,extra-google-google_play_services,extra-google-m2repository,sys-img-armeabi-v7a-${VERSION_TARGET_SDK},sys-img-armeabi-v7a-google_apis-${VERSION_TARGET_SDK}"
 
