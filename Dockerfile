@@ -18,7 +18,7 @@ ENV PATH "$PATH:${ANDROID_HOME}/tools"
 ENV DEBIAN_FRONTEND noninteractive
 
 # Accept License
-
+RUN yes | sdkmanager --licenses
 # Constraint Layout / [Solver for ConstraintLayout 1.0.0-alpha8, ConstraintLayout for Android 1.0.0-alpha8]
 RUN mkdir -p $ANDROID_HOME/licenses/
 RUN echo "8933bad161af4178b1185d1a37fbf41ea5269c55" > $ANDROID_HOME/licenses/android-sdk-license
